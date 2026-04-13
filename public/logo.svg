@@ -1,16 +1,30 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
   <defs>
-    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+    <linearGradient id="qg" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
       <stop offset="0%" stop-color="#6c63ff"/>
       <stop offset="100%" stop-color="#00bcd4"/>
     </linearGradient>
   </defs>
-  <line x1="5" y1="30" x2="95" y2="30" stroke="#6c63ff" stroke-width="3" stroke-opacity="0.9"/>
-  <line x1="5" y1="50" x2="95" y2="50" stroke="#00bcd4" stroke-width="3" stroke-opacity="0.9"/>
-  <line x1="5" y1="70" x2="95" y2="70" stroke="#6c63ff" stroke-width="3" stroke-opacity="0.9"/>
-  <rect x="38" y="38" width="24" height="24" rx="4" fill="none" stroke="url(#grad)" stroke-width="3"/>
-  <circle cx="18" cy="30" r="6" fill="none" stroke="#6c63ff" stroke-width="2.5"/>
-  <circle cx="78" cy="50" r="6" fill="none" stroke="#00bcd4" stroke-width="2.5"/>
-  <circle cx="30" cy="70" r="6" fill="none" stroke="#6c63ff" stroke-width="2.5"/>
-  <circle cx="50" cy="50" r="7" fill="url(#grad)"/>
+
+  <!-- Qubit wire 0 (top) -->
+  <line x1="4" y1="22" x2="60" y2="22" stroke="url(#qg)" stroke-width="1.5" stroke-linecap="round" opacity="0.55"/>
+  <!-- Qubit wire 1 (bottom) -->
+  <line x1="4" y1="42" x2="60" y2="42" stroke="url(#qg)" stroke-width="1.5" stroke-linecap="round" opacity="0.55"/>
+
+  <!-- H gate box on qubit 0 -->
+  <rect x="8" y="15" width="16" height="14" rx="3" fill="#6c63ff" fill-opacity="0.18" stroke="#6c63ff" stroke-width="1.5"/>
+  <text x="16" y="26" font-size="9" font-family="monospace" font-weight="bold" fill="#6c63ff" text-anchor="middle">H</text>
+
+  <!-- CNOT vertical connector line (control → target) -->
+  <line x1="44" y1="22" x2="44" y2="35" stroke="#6c63ff" stroke-width="1.5"/>
+
+  <!-- CNOT target ⊕ on qubit 1 — circle -->
+  <circle cx="44" cy="42" r="7" stroke="#00bcd4" stroke-width="1.5"/>
+  <!-- CNOT target ⊕ — vertical cross bar -->
+  <line x1="44" y1="35" x2="44" y2="49" stroke="#00bcd4" stroke-width="1.5"/>
+  <!-- CNOT target ⊕ — horizontal cross bar -->
+  <line x1="37" y1="42" x2="51" y2="42" stroke="#00bcd4" stroke-width="1.5"/>
+
+  <!-- CNOT control filled dot on qubit 0 (drawn last = on top) -->
+  <circle cx="44" cy="22" r="4" fill="#6c63ff"/>
 </svg>
